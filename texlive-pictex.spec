@@ -1,3 +1,9 @@
+# revision 21943
+# category Package
+# catalog-ctan /graphics/pictex
+# catalog-date 2011-04-03 16:40:50 +0200
+# catalog-license lppl1
+# catalog-version 1.1
 Name:		texlive-pictex
 Version:	1.1
 Release:	1
@@ -60,6 +66,7 @@ be used.
 %doc %{_texmfdistdir}/doc/generic/pictex/README
 %doc %{_texmfdistdir}/doc/generic/pictex/pictexzusatz.txt
 %doc %{_texmfdistdir}/doc/generic/pictex/readme.errorbars
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -70,3 +77,5 @@ be used.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
