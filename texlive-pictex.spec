@@ -6,7 +6,7 @@
 # catalog-version 1.1
 Name:		texlive-pictex
 Version:	1.1
-Release:	2
+Release:	3
 Summary:	Picture drawing macros for TeX and LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pictex
