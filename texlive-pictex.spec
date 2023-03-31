@@ -1,6 +1,6 @@
 Name:		texlive-pictex
 Version:	59551
-Release:	1
+Release:	2
 Summary:	Picture drawing macros for TeX and LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pictex
