@@ -3,7 +3,7 @@ Version:	59551
 Release:	2
 Summary:	Picture drawing macros for TeX and LaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pictex
+URL:		https://www.ctan.org/tex-archive/graphics/pictex
 License:	LPPL1
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pictex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pictex.doc.r%{version}.tar.xz
