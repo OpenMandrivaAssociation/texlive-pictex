@@ -1,48 +1,23 @@
-Name:		texlive-pictex
-Version:	59551
-Release:	2
+%global tl_name pictex
+%global tl_revision 59551
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1b
+Release:	%{tl_revision}.1
 Summary:	Picture drawing macros for TeX and LaTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pictex
-License:	LPPL1
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pictex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pictex.doc.r%{version}.tar.xz
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pictex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pictex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-PicTeX is an early, and very comprehensive drawing package,
-that mostly draws by placing myriads of small dots to make up
-pictures. It has a tendency to run out of space, most
-especially of allowable dimensions registers; packages m-pictex
-and pictexwd deal with the register problem, in different ways.
-Note that full documentation may be bought via the PC-TeX site,
-though a command summary is available as free software.
-Alternatively, a front-end package such as mathsPiC, which
-covers all of PicTeX and has a complete and free manual, could
-be used.
+PicTeX is an early and very comprehensive drawing package that mostly
+draws by placing myriads of small dots to make up pictures. It has a
+tendency to run out of space; packages m-pictex and pictexwd deal with
+the problems in different ways.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/pictex
-%doc %{_texmfdistdir}/doc/generic/pictex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
